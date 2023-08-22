@@ -96,7 +96,7 @@ for educational school, web e-commerce developing, accounting apps and general m
 	a = "3.0"; b = "5.7"; 		       //INITIALIZATION
 	R = a / b; 			      //INITIALIZATION
 	cout << "R = " << R << endl; 	     //R = 0.5263157894736842105
-	cout << div(a, b).round() << endl;  //R = 0.52
+	cout << div(a, b).round() << endl;  //R = 0.53
 
 (% operator, divmod function) int division and floating-point remainder:  
 
@@ -133,7 +133,7 @@ logic (<, <=, >, >=, !=, ==) and relational operators (and, or, not).
 	cout << !a.is_zero()    << endl; //1=true
 	cout << c.is_negative() << endl;//0=false
 
-(< <= > >= != ==)  
+(< <= > >= != ==): 
 
 	a = "0.0", b = "0.1", c = "-0.2"; 			//INITIALIZATION
 	cout << (a < b) << (a < c) << (b < c)    << endl;      //100 (True  False False) 
@@ -143,15 +143,16 @@ logic (<, <=, >, >=, !=, ==) and relational operators (and, or, not).
 	cout << (c == -2 * b) << (a == c + 2 * b) << (a != a + b + c) << endl; //111 (True  True  True)
 	cout << (a && b) << (a || b) << (!a) << endl; 	  //011 (False  True True) 
 
-(+ - unary operators)
+(+ - unary operators):
   
 	a = "-10.0", b = "+10.1"; 			    //INITIALIZATION 
 	cout << "a = " << a.format() << endl;              //a = -10.00
 	cout << "b = " << b.format(2, ',', true) << endl; //b = +10.10
 
-On a given Num variable the following arithmetic methods are available:
+On a given Num variable the following arithmetic methods are available.
 
-    #variable arithmetics  
+variable arithmetics:
+
 	Num a = "10.25"; 			   //DECLARATION AND INITIALIZATION
 	cout << a << endl; 			  //10.25
 	cout << a.inc() << endl; 		 //11.25
@@ -197,7 +198,7 @@ EVEN ODD numbering methods:
 	else cout << "Num, FAILURE because " << a << " is not equal " << "0.0" << endl;
 	cout << "----------------------" << endl;
 
-LOOP EXAMPLE >>>  
+LOOP EXAMPLE:
 
 	for (Num i("-1.0"); i != 0; i += "0.1") //-1.0 -0.9 -0.8 -0.7 -0.6 -0.5 -0.4 -0.3 -0.2 -0.1
 		cout << i << " ";
@@ -219,7 +220,7 @@ LOOP EXAMPLE >>>
 	cout << endl;
 	cout << "----------------------" << endl;
 
-ROUNDING AND ACCOUNTING >>>  
+ROUNDING AND ACCOUNTING:
 
 	Num p("11.19"), discountRate("7.00"); //DECLARATION AND INITIALIZATION - PRICE -Toslink cable for soundbar  
 	cout << "price=" << p;
@@ -231,7 +232,7 @@ ROUNDING AND ACCOUNTING >>>
 	cout << " PAYED=" << pd << " discount=" << d << " COST=" << p_noTAX << " TAX=" << TAX << endl ;
 	//price=11.19 PAYED=10.41 discount=0.78 COST=8.53 TAX=1.88
 	
-OUTPUT LOCALIZATION, FORMATTING AND SQUARENESS >>>
+OUTPUT LOCALIZATION, FORMATTING AND SQUARENESS:
 
 	Num amount = "1_000_000.99"; //DECLARATION AND INITIALIZATION
 	cout << "US localization => " << amount.format(2, ',', '+') << endl; //US localization => +1,000,000.99
@@ -297,7 +298,7 @@ OUTPUT LOCALIZATION, FORMATTING AND SQUARENESS >>>
      9   27.858,29    2.019,73   30.878,02
     10   30.878,02    2.238,66   34.116,68
     ------------------------------------------------------------ 
-       194.712,67   14.116,68  218.829,35 => SQUARENESS=SUCCESS	*/ 
+        194.712,67   14.116,68  218.829,35 => SQUARENESS=SUCCESS	*/ 
 	   
 ROUNDING TYPES:
 
@@ -374,7 +375,7 @@ UNSIGNED ARBITRARY PRECISION ARITHMETIC:
 		}
 		return 0;
 
-	/*Video output:
+	/* Video output:
  
 	STRING ADDITION
 	18446744073709551615.05
@@ -407,7 +408,7 @@ UNSIGNED ARBITRARY PRECISION ARITHMETIC:
 	-----------------------
 	0.000000000000000000000000000000000000000000000000000000000159309191113245227727501120158790347743991499315254642414053871413919539657255886403583887813067464357086554400745997412712 */
 
-FLOAT TO NUM CONVERSION LIST >>>
+FLOAT TO NUM CONVERSION LIST:
 
 	#include "num7.h"
 	using namespace num7;
@@ -433,8 +434,8 @@ FLOAT TO NUM CONVERSION LIST >>>
 			cout << ": EXCEPTION CAUGHT: " << e.what() << endl;
 		}
 		return 0;
-	} //OUTPUT:
-	/*
+	} /* VIDEO OUTPUT:
+	
 	elements=5
 	----------------------
 	5.14
