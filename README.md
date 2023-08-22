@@ -308,7 +308,7 @@ OUTPUT LOCALIZATION, FORMATTING AND SQUARENESS:
 ROUNDING TYPES:
 
         Num r = "2.82", //DECLARATION AND INITIALIZATION
-            area = r * r * r.pi,
+            area = r * r * r.get_pi(),
             temp = area, temp2 = area;
         cout << area << endl;                      //24.9832014216696
         cout << "---- Num floor    rounding ----\n";
