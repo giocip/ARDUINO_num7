@@ -151,7 +151,7 @@ logic (<, <=, >, >=, !=, ==) and relational operators (and, or, not).
 
 On a given Num variable the following arithmetic methods are available.
 
-variable arithmetics:
+variable arithmetic:
 
 	Num a = "10.25"; 			   //DECLARATION AND INITIALIZATION
 	cout << a << endl; 			  //10.25
@@ -244,7 +244,7 @@ OUTPUT LOCALIZATION, FORMATTING AND SQUARENESS:
 	cout << "EU localization => " << amount.format(2, '.', '+') << endl; //EU localization => +1.000.000,99
 	cout << "----------------------" << endl;
     
-# SAVING CALCULATOR: 
+# Saving calculator: 
 	
 	#include "num7.h"
 	#include <iomanip>
@@ -413,7 +413,7 @@ UNSIGNED ARBITRARY PRECISION ARITHMETIC:
 		-----------------------
 		0.000000000000000000000000000000000000000000000000000000000159309191113245227727501120158790347743991499315254642414053871413919539657255886403583887813067464357086554400745997412712 */
 
-FLOAT TO NUM CONVERSION LIST:
+double TO Num CONVERSION LIST:
 
 	#include "num7.h"
 	using namespace num7;
