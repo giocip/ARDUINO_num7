@@ -122,7 +122,7 @@ for educational school, web e-commerce developing, accounting apps and general m
 	cout << "power = " << power << endl; 		   //power = 29673.367320587092457984
 	power = b ^ 32; 				  //INITIALIZATION
 	cout << "power = " << power << endl; 		 //power = 4294967296.0
-	cout << "power = " << pow(b + 3, 3) << endl;//power = 125.0
+	cout << "power = " << pow(b + 3, 3) << endl;    //power = 125.0
 
 logic (<, <=, >, >=, !=, ==) and relational operators (and, or, not).  
 
@@ -197,6 +197,11 @@ EVEN ODD numbering methods:
 	if (a == "0.0") cout << "Num, SUCCESS" << endl; //Num solved
 	else cout << "Num, FAILURE because " << a << " is not equal " << "0.0" << endl;
 	cout << "----------------------" << endl;
+ 	/* VIDEO OUTPUT:
+	double, FAILURE because 2.77556e-17 is not equal 0
+	----------------------
+	Num, SUCCESS
+	---------------------- */
 
 LOOP EXAMPLE:
 
