@@ -184,7 +184,7 @@ EVEN ODD numbering methods:
 	cout << c << " FLOAT  => "  << c.is_floating() << endl;                              //3.14 FLOAT  => 1(true)
 	cout << "----------------------" << endl;
 
-# Advanced logic programming snippet
+# Advanced logic programming snippets:
 
 	double A = -0.3; //double question //DECLARATION AND INITIALIZATION
 	A += 0.1; A += 0.1; A += 0.1;
@@ -413,7 +413,7 @@ UNSIGNED ARBITRARY PRECISION ARITHMETIC:
 		-----------------------
 		0.000000000000000000000000000000000000000000000000000000000159309191113245227727501120158790347743991499315254642414053871413919539657255886403583887813067464357086554400745997412712 */
 
-double TO Num CONVERSION LIST:
+double TO Num CONVERSION ARRAY:
 
 	#include "num7.h"
 	using namespace num7;
