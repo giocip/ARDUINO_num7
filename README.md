@@ -70,32 +70,32 @@ for educational school, web e-commerce developing, accounting apps and general m
 
 (+) adding:  
 
-	Num R = a + b + c; //DECLARATION AND INITIALIZATION
-	cout << "R = " << R << endl; //R = 8.0  
+	Num R = a + b + c;                 //DECLARATION AND INITIALIZATION
+	cout << "R = " << R << endl;      //R = 8.0  
 	a = "0.1"; b = "0.2"; c = "0.0"; //INITIALIZATION
 	R = a + b + c; 
-	cout << "R = " << R << endl; //R = 0.3  
+	cout << "R = " << R << endl;   //R = 0.3  
 
 (-) subtracting:  
 
-	a = "0.1"; b = "0.2"; c = "0.3"; //INITIALIZATION  
-	R = a + b - c; //INITIALIZATION 
+	a = "0.1"; b = "0.2"; c = "0.3";          //INITIALIZATION  
+	R = a + b - c;                           //INITIALIZATION 
 	cout << "R = " << R << endl; //R = 0.0 
 	a = "-3.99"; b = "-5.20"; c = "+3.01"; //INITIALIZATION 
 	R = a - b - c; 
-	cout << "R = " << R << endl; //R = -1.8 
+	cout << "R = " << R << endl;         //R = -1.8 
 
 (*) multiplying:  
 
 	a = "-3.99"; b = "-5.20"; c = "+3.01"; //INITIALIZATION
-	R = a * b * c; //INITIALIZATION 
-	cout << "R = " << R << endl; //R = 62.45148
+	R = a * b * c;                        //INITIALIZATION 
+	cout << "R = " << R << endl;         //R = 62.45148
 
 (/) dividing:  
 
-	a = "3.0"; b = "5.7"; 		    //INITIALIZATION
-	R = a / b; 			    //INITIALIZATION
-	cout << "R = " << R << endl; 	    //R = 0.5263157894736842105
+	a = "3.0"; b = "5.7"; 		       //INITIALIZATION
+	R = a / b; 			      //INITIALIZATION
+	cout << "R = " << R << endl; 	     //R = 0.5263157894736842105
 	cout << div(a, b).round() << endl;  //R = 0.52
 
 (% operator, divmod function) int division and floating-point remainder:  
@@ -164,7 +164,7 @@ On a given Num variable the following arithmetic methods are available:
 	cout << a.divX10().format() << endl;  //2,505,000.00
 	cout << a.divX100().format() << endl; //25,050.00
 	cout << a.divX1000().format() << endl;//25.05
-	cout << a.clear() << endl;		 	  //0.0
+	cout << a.clear() << endl;	      //0.0
 	cout << "----------------------" << endl;
 	
 	Num price("59.99"), rate = "22.00";//DECLARATION AND INITIALIZATION
@@ -296,7 +296,7 @@ OUTPUT LOCALIZATION, FORMATTING AND SQUARENESS >>>
      8   25.042,69    1.815,60   27.858,29
      9   27.858,29    2.019,73   30.878,02
     10   30.878,02    2.238,66   34.116,68
-   ------------------------------------------------------------ 
+    ------------------------------------------------------------ 
        194.712,67   14.116,68  218.829,35 => SQUARENESS=SUCCESS	*/ 
 	   
 ROUNDING TYPES >>>  
