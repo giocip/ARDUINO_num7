@@ -244,7 +244,7 @@ OUTPUT LOCALIZATION, FORMATTING AND SQUARENESS:
 	cout << "EU localization => " << amount.format(2, '.', '+') << endl; //EU localization => +1.000.000,99
 	cout << "----------------------" << endl;
     
-# SAVING CALCULATOR 
+# SAVING CALCULATOR: 
 	
 	#include "num7.h"
 	#include <iomanip>
@@ -379,7 +379,7 @@ UNSIGNED ARBITRARY PRECISION ARITHMETIC:
 			cout << ": EXCEPTION CAUGHT: " << e.what() << endl;
 		}
 		return 0;
-
+	}
 	/* Video output:
  
 	STRING ADDITION
