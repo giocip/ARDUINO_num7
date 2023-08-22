@@ -135,7 +135,7 @@ logic (<, <=, >, >=, !=, ==) and relational operators (and, or, not).
 
 (< <= > >= != ==)  
 
-	a = "0.0", b = "0.1", c = "-0.2"; 				        //INITIALIZATION
+	a = "0.0", b = "0.1", c = "-0.2"; 			//INITIALIZATION
 	cout << (a < b) << (a < c) << (b < c)    << endl;      //100 (True  False False) 
 	cout << (a <= a) << (a <= c) << (b <= c) << endl;     //100 (True  False False) 
 	cout << (a > b) << (a > c) << (b > c)    << endl;    //011 (False True  True) 
@@ -145,7 +145,7 @@ logic (<, <=, >, >=, !=, ==) and relational operators (and, or, not).
 
 (+ - unary operators)
   
-	a = "-10.0", b = "+10.1"; 							//INITIALIZATION 
+	a = "-10.0", b = "+10.1"; 			    //INITIALIZATION 
 	cout << "a = " << a.format() << endl;              //a = -10.00
 	cout << "b = " << b.format(2, ',', true) << endl; //b = +10.10
 
@@ -167,20 +167,20 @@ On a given Num variable the following arithmetic methods are available:
 	cout << a.clear() << endl;	      //0.0
 	cout << "----------------------" << endl;
 	
-	Num price("59.99"), rate = "22.00";//DECLARATION AND INITIALIZATION
-	cout << price << endl;            //59.99
+	Num price("59.99"), rate = "22.00";                   //DECLARATION AND INITIALIZATION
+	cout << price << endl;                               //59.99
 	Num price_industrial = price.spinoff(rate).round(); //DECLARATION AND INITIALIZATION
 	cout << price_industrial << endl;                  //49.17
 	price = price_industrial.incpct(rate).round();    //INITIALIZATION
-	cout << price << endl; //59.99 final price
+	cout << price << endl;                           //59.99 final price
 	cout << price.decpct("17.49").round().format() << endl; //49.50 discounted price
 
 EVEN ODD numbering methods:
 
 	Num a(6), b(3), c = "3.14"; //DECLARATION AND INITIALIZATION
-	cout << a << " INTEGER => " << a.is_integer() << "  EVEN => " << a.is_even() << endl; //6.0 INTEGER => 1(true)  EVEN => 1(true)
+	cout << a << " INTEGER => " << a.is_integer() << "  EVEN => " << a.is_even() << endl;  //6.0 INTEGER => 1(true)  EVEN => 1(true)
 	cout << b << " INTEGER => " << b.is_integer() << "  ODD  => " << b.is_odd() << endl;  //3.0 INTEGER => 1(true)  ODD  => 1(true)
-	cout << c << " FLOAT  => "  << c.is_floating() << endl;  //3.14 FLOAT  => 1(true)
+	cout << c << " FLOAT  => "  << c.is_floating() << endl;                              //3.14 FLOAT  => 1(true)
 	cout << "----------------------" << endl;
 
 # Advanced logic programming snippet
@@ -238,7 +238,7 @@ OUTPUT LOCALIZATION, FORMATTING AND SQUARENESS >>>
 	cout << "EU localization => " << amount.format(2, '.', '+') << endl; //EU localization => +1.000.000,99
 	cout << "----------------------" << endl;
     
-# saving calculator 
+# SAVING CALCULATOR 
 	
 	#include "num7.h"
 	#include <iomanip>
@@ -299,7 +299,7 @@ OUTPUT LOCALIZATION, FORMATTING AND SQUARENESS >>>
     ------------------------------------------------------------ 
        194.712,67   14.116,68  218.829,35 => SQUARENESS=SUCCESS	*/ 
 	   
-ROUNDING TYPES >>>  
+ROUNDING TYPES:
 
         Num r = "2.82", //DECLARATION AND INITIALIZATION
             area = r * r * r.pi,
