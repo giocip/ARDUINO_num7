@@ -93,18 +93,18 @@ for educational school, web e-commerce developing, accounting apps and general m
 
 (/) dividing:  
 
-	a = "3.0"; b = "5.7"; 				   //INITIALIZATION
-	R = a / b; 							  //INITIALIZATION
-	cout << "R = " << R << endl; 		 //R = 0.5263157894736842105
+	a = "3.0"; b = "5.7"; 		    //INITIALIZATION
+	R = a / b; 			    //INITIALIZATION
+	cout << "R = " << R << endl; 	    //R = 0.5263157894736842105
 	cout << div(a, b).round() << endl;  //R = 0.52
 
 (% operator, divmod function) int division and floating-point remainder:  
 
 	a = 2564; b = 17;
-	Num quotient  = a / b; 								     //DECLARATION AND INITIALIZATION
-	Num remainder = a % b; 								    //DECLARATION AND INITIALIZATION
-	cout << "Quotient = "  << quotient.get_I() << endl;    //Quotient = 150.0
-	cout << "Remainder = " << remainder << endl;          //INTEGER Remainder = 14.0
+	Num quotient  = a / b; 					  //DECLARATION AND INITIALIZATION
+	Num remainder = a % b; 					 //DECLARATION AND INITIALIZATION
+	cout << "Quotient = "  << quotient.get_I() << endl;     //Quotient = 150.0
+	cout << "Remainder = " << remainder << endl;           //INTEGER Remainder = 14.0
 	a = "3.141592654"; b = 2;
 	cout << "Quotient = "  << div(a, b).get_I() << endl; //Quotient = 1.0
 	cout << "Remainder = " << divmod(a, b) << endl;     //FLOATING-POINT Remainder = 1.141592654
@@ -112,15 +112,15 @@ for educational school, web e-commerce developing, accounting apps and general m
 (sqrt) square root function:  
 
 	a = Num("123_456_789.1234567891");   //INITIALIZATION
-	Num root = a.sqrt(); 			    //DECLARATION AND INITIALIZATION 
+	Num root = a.sqrt(); 	            //DECLARATION AND INITIALIZATION 
 	cout << "root = " << root << endl; //root = 11111.11106
 
 (^) power operator and pow function:  
 
 	a = "3.14"; b = 2;
-	Num power = a.pow(9); 				 		    //DECLARATION AND INITIALIZATION
+	Num power = a.pow(9); 				    //DECLARATION AND INITIALIZATION
 	cout << "power = " << power << endl; 		   //power = 29673.367320587092457984
-	power = b ^ 32; 					 		  //INITIALIZATION
+	power = b ^ 32; 				  //INITIALIZATION
 	cout << "power = " << power << endl; 		 //power = 4294967296.0
 	cout << "power = " << pow(b + 3, 3) << endl;//power = 125.0
 
@@ -152,11 +152,11 @@ logic (<, <=, >, >=, !=, ==) and relational operators (and, or, not).
 On a given Num variable the following arithmetic methods are available:
 
     #variable arithmetics  
-	Num a = "10.25"; 					  //DECLARATION AND INITIALIZATION
-	cout << a << endl; 					  //10.25
-	cout << a.inc() << endl; 			  //11.25
-	cout << a.dec(2) << endl;			  //9.25
-	cout << a.dec("4.25") << endl;		  //5.0
+	Num a = "10.25"; 			   //DECLARATION AND INITIALIZATION
+	cout << a << endl; 			  //10.25
+	cout << a.inc() << endl; 		 //11.25
+	cout << a.dec(2) << endl;		//9.25
+	cout << a.dec("4.25") << endl;	       //5.0
 	cout << (a = a.mul("5.01")) << endl;  //25.05
 	cout << a.mulX10().format() << endl;  //250.50
 	cout << a.mulX100().format() << endl; //25,050.00
@@ -168,10 +168,10 @@ On a given Num variable the following arithmetic methods are available:
 	cout << "----------------------" << endl;
 	
 	Num price("59.99"), rate = "22.00";//DECLARATION AND INITIALIZATION
-	cout << price << endl; //59.99
+	cout << price << endl;            //59.99
 	Num price_industrial = price.spinoff(rate).round(); //DECLARATION AND INITIALIZATION
-	cout << price_industrial << endl; //49.17
-	price = price_industrial.incpct(rate).round();//INITIALIZATION
+	cout << price_industrial << endl;                  //49.17
+	price = price_industrial.incpct(rate).round();    //INITIALIZATION
 	cout << price << endl; //59.99 final price
 	cout << price.decpct("17.49").round().format() << endl; //49.50 discounted price
 
@@ -238,7 +238,7 @@ OUTPUT LOCALIZATION, FORMATTING AND SQUARENESS >>>
 	cout << "EU localization => " << amount.format(2, '.', '+') << endl; //EU localization => +1.000.000,99
 	cout << "----------------------" << endl;
     
-#saving calculator 
+# saving calculator 
 	
 	#include "num7.h"
 	#include <iomanip>
@@ -284,20 +284,20 @@ OUTPUT LOCALIZATION, FORMATTING AND SQUARENESS >>>
 			cout << ": EXCEPTION CAUGHT: " << e.what() << endl;
 		}
 		return 0;
-	} //Video output:
-/*
-    1   10.000,00      725,00   11.725,00
-    2   11.725,00      850,06   13.575,06
-    3   13.575,06      984,19   15.559,25
-    4   15.559,25    1.128,05   17.687,30
-    5   17.687,30    1.282,33   19.969,63
-    6   19.969,63    1.447,80   22.417,43
-    7   22.417,43    1.625,26   25.042,69
-    8   25.042,69    1.815,60   27.858,29
-    9   27.858,29    2.019,73   30.878,02
-   10   30.878,02    2.238,66   34.116,68
-   ------------------------------------------------------------
-       194.712,67   14.116,68  218.829,35 => SQUARENESS=SUCCESS	*/
+	} /* Video output:
+
+     1   10.000,00      725,00   11.725,00
+     2   11.725,00      850,06   13.575,06
+     3   13.575,06      984,19   15.559,25
+     4   15.559,25    1.128,05   17.687,30
+     5   17.687,30    1.282,33   19.969,63
+     6   19.969,63    1.447,80   22.417,43
+     7   22.417,43    1.625,26   25.042,69
+     8   25.042,69    1.815,60   27.858,29
+     9   27.858,29    2.019,73   30.878,02
+    10   30.878,02    2.238,66   34.116,68
+   ------------------------------------------------------------ 
+       194.712,67   14.116,68  218.829,35 => SQUARENESS=SUCCESS	*/ 
 	   
 ROUNDING TYPES >>>  
 
@@ -374,8 +374,8 @@ UNSIGNED ARBITRARY PRECISION ARITHMETIC:
 		}
 		return 0;
 
-	//Video output:
- /*
+	/*Video output:
+ 
 	STRING ADDITION
 	18446744073709551615.05
 	79557855184810661726.96
