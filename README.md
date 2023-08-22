@@ -20,7 +20,7 @@ for educational school, web e-commerce developing, accounting apps and general m
 
 ---
 
-## HOW TO USE (integer numeric strings (ex. '2.0') MUST BE SUFFIXED WITH .0): 
+## HOW TO USE (integer numeric strings (ex. "2.0") MUST BE SUFFIXED WITH .0): 
 --- CALCULATOR MODE ---   
 
 	#include "num7.h" 
@@ -502,7 +502,7 @@ Q. I must enter many integer variables in my code:
 
 	Num a = "123.0" , b = "456.0", c = "789.0";
 	
-Can i input them without quotes and suffix .0?  
+Can i input them without double quotes and suffix .0?  
 A. Yes, this way:
 
 	Num a(123), b(456), c(789);  
