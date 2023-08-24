@@ -44,14 +44,14 @@ for educational school, web e-commerce developing, accounting apps and general m
 			/* M- */               M.dec("5.0"); M.dec("3.3"); M.dec("1.5"); cout << M << endl; //Num("0.2") 
 			/* MC */ M.clear(); cout << M << endl; //Num("0.0") 
 					 cout << "----------------------" << endl; 
-					 Num cart[] = { "19.32", "18.37", "15.13" }; int elements = 3; 
-			/* SUM   */ cout << sum(cart, elements).format() << endl;          //Num("52.82") 
-			/* MEAN  */ cout << mean(cart, elements).round().format() << endl; //Num("17.61") 
-			/* MIN   */ cout << min (cart, elements) << endl;                  //Num("15.13") 
-			/* MAX   */ cout << max (cart, elements) << endl;                  //Num("19.32") 
+				Num cart[] = { "19.32", "18.37", "-15.13" }; int elements = 3; 
+			/* SUM   */ cout << sum (cart, elements).format() << endl;         //Num("22.56") 
+			/* MEAN  */ cout << mean(cart, elements).round().format() << endl; //Num("7.52") 
+			/* MIN   */ cout << min (cart, elements).get_Num_signed() << endl; //Num("-15.13") 
+			/* MAX   */ cout << max (cart, elements).get_Num_signed() << endl; //Num("+19.32") 
 			/*MIN MAX*/ Num* result = minmax(cart, elements); 
-						cout << result[0] << endl; //Num("15.13") 
-						cout << result[1] << endl; //Num("19.32") 
+				cout << result[0].get_Num_signed()  << endl; //Num("-15.13") 
+				cout << result[1].get_Num_signed()  << endl; //Num("+19.32") 
 			/* REPL  */ Num a("-3_000_000.0"); cout << format(a) << endl; //"-3,000,000.00" 
 						cout << "----------------------" << endl; 
 		}
@@ -503,6 +503,6 @@ Q. I must enter many integer variables in my code:
 	Num a = "123.0" , b = "456.0", c = "789.0";
 	
 Can i input them without double quotes and suffix .0?  
-A. Yes, this way:
+A. Yes, this the way:
 
 	Num a(123), b(456), c(789);  
