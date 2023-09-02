@@ -353,13 +353,13 @@ UNSIGNED ARBITRARY PRECISION ARITHMETIC:
 			
 			/* STRING DIVISION */
 			cout << "STRING DIVISION" << endl;
-			char* div = divfs(a, b, 80); //80 DECIMAL DIGITS
+			char* Q = divfs_inv(a, b); 
 			cout << a << endl;
 			cout << b << endl;
 			cout << "-----------------------\n";
-			cout << div << endl;
-			char* trunc = trunks(div, 5); //TRUNCATION TO 5 DECIMAL DIGITS
-			free(div);
+			cout << Q << endl;
+			char* trunc = trunks(Q, 5); //TRUNCATION TO 5 DECIMAL DIGITS
+			free(Q);
 			Num result(trunc); free(trunc);
 			result.round(4); //ROUNDING TO 4 DECIMAL DIGITS
 			cout << result << endl << endl; 
