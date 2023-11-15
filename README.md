@@ -37,7 +37,8 @@ for educational school, web e-commerce developing, accounting apps and general m
 			/* POWER              */ cout << pow("3.14", "8.0")     << endl; //Num("9450.1169810786918656")
 			/* SQUARE ROOT        */ cout << sqrt("2.0")            << endl; //Num("1.414213562")          
 			/* ROUND 2 DIGITS     */ cout << round(sqrt("2.0"))     << endl; //Num("1.41")    
-			/* ROUND 4 DIGITS     */ cout << round("3.141592654", 4)<< endl; //Num("3.1416")      
+			/* ROUND 4 DIGITS     */ cout << round("3.141592654", 4)<< endl; //Num("3.1416") 
+   			/* ROUND BANKING      */ cout << round_bank("3.141592654", 7) << endl; //Num("3.1415926") 
 			/* ABS                */ cout << abs("-5.25")           << endl; //Num("5.25")      
 					 cout << "----------------------" << endl; 
 			/* M+ */ Num M("0.0"); M.inc("3.0"); M.inc("3.3"); M.inc("3.7"); cout << M << endl; //Num("10.0") 
