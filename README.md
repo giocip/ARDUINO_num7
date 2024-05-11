@@ -3,7 +3,7 @@
 
 - _**`num7.h`**_ is a C++ high-level (python3 style), lightweight, floating-point computing header file for ARBITRARY PRECISION DECIMAL ARITHMETIC.
 
-Easy to use like school math and WITHOUT IEEE754 ISSUES AND COMPARING FAILURES, it can be deployed  
+Easy to use like school math and WITHOUT IEEE754 ISSUES AND NUMBER COMPARING FAILURES, it can be deployed  
 for educational school, web e-commerce developing, accounting apps and general math programs included financial ones.  
 
 
@@ -13,7 +13,7 @@ for educational school, web e-commerce developing, accounting apps and general m
 
 ### Create a folder on your computer and
 
-- With your favourite editor create num7.h file and copy it along with your c++ project.cpp file in that same folder
+- With your favourite editor create num7.h file and copy it along with your c++ project.ino file in that same folder
 
 
 - Ok!
@@ -26,40 +26,31 @@ for educational school, web e-commerce developing, accounting apps and general m
 	#include "num7.h" 
 	using namespace num7; 
 
-	int main() { 
-		try { 
+	void setup() { 
 			
-			/* ADDITION           */ cout << add("2.5", "3.6")      << endl; //Num("6.1")                  
-			/* SUBTRACTION        */ cout << sub("2.5", "3.6")      << endl; //Num("-1.1")                 
-			/* MULTIPLICATION     */ cout << mul("2.5", "3.6")      << endl; //Num("9.0")                  
-			/* DIVISION           */ cout << div("2.5", "3.6")      << endl; //Num("0.6944444444444444444") 
-			/* DIVISION REMAINDER */ cout << divmod("11.0", "8.0")  << endl; //Num("3.0")                  
-			/* POWER              */ cout << pow("3.14", "8.0")     << endl; //Num("9450.1169810786918656")
-			/* SQUARE ROOT        */ cout << sqrt("2.0")            << endl; //Num("1.414213562")          
-			/* ROUND 2 DIGITS     */ cout << round(sqrt("2.0"))     << endl; //Num("1.41")    
-			/* ROUND 4 DIGITS     */ cout << round("3.141592654", 4)<< endl; //Num("3.1416") 
-   			/* ROUND BANKING      */ cout << round_bank("3.141592654", 7) << endl; //Num("3.1415926") 
-			/* ABS                */ cout << abs("-5.25")           << endl; //Num("5.25")      
-					 cout << "----------------------" << endl; 
-			/* M+ */ Num M("0.0"); M.inc("3.0"); M.inc("3.3"); M.inc("3.7"); cout << M << endl; //Num("10.0") 
-			/* M- */               M.dec("5.0"); M.dec("3.3"); M.dec("1.5"); cout << M << endl; //Num("0.2") 
-			/* MC */ M.clear(); cout << M << endl; //Num("0.0") 
-					 cout << "----------------------" << endl; 
-				Num cart[] = { "19.32", "18.37", "-15.13" }; int elements = 3; 
-			/* SUM   */ cout << sum (cart, elements).format() << endl;         //Num("22.56") 
-			/* MEAN  */ cout << mean(cart, elements).round().format() << endl; //Num("7.52") 
-			/* MIN   */ cout << min (cart, elements).get_Num_signed() << endl; //Num("-15.13") 
-			/* MAX   */ cout << max (cart, elements).get_Num_signed() << endl; //Num("+19.32") 
-			/*MIN MAX*/ Num* result = minmax(cart, elements); 
-				cout << result[0].get_Num_signed()  << endl; //Num("-15.13") 
-				cout << result[1].get_Num_signed()  << endl; //Num("+19.32") 
-			/* REPL  */ Num a("-3_000_000.0"); cout << format(a) << endl; //"-3,000,000.00" 
-						cout << "----------------------" << endl; 
-		}
-		catch (exception& e) { 
-			cout << ": EXCEPTION CAUGHT: " << e.what() << endl; 
-		} 
-		return 0; 
+		/* ADDITION           */ add("2.5", "3.6").print("\n"); 		  //6.1                 
+		/* SUBTRACTION        */ sub("2.5", "3.6").print("\n"); 	   //-1.1               
+		/* MULTIPLICATION     */ mul("2.5", "3.6").print("\n"); 	  //9.0                 
+		/* DIVISION           */ div("2.5", "3.6").print("\n"); 	 //0.6944444444444444444
+		/* DIVISION REMAINDER */ mod("11.0", "8.0").print("\n");	//3.0                 
+		/* POWER              */ pow("3.14", "8.0").print("\n"); //9450.1169810786918656
+		/* SQUARE ROOT        */ sqr("2.0").print("\n"); 				              //1.414213562         
+		/* ROUND 2 DIGITS     */ round(sqr("2.0")).print("\n"); 			       //1.41  
+		/* ROUND 4 DIGITS     */ round("3.141592654", 4).print("\n"); 		  //3.1416
+		/* ROUND BANKING      */ round_bank("3.141592654", 7).print("\n"); //3.1415926
+		/* ABS                */ Abs("-5.25").print("\n"); 				        //5.25      
+		print("----------------------\n");  		  //----------------------
+		NUM cart[3] ; cart[0] = "19.32"; cart[1] = "18.37"; cart[2] = "-15.13" ; int elements = 3;
+		/* SUM   */ sum(cart, elements).print("\n");        	 //22.56 
+		/* MEAN  */ mean(cart, elements).round().print("\n"); //7.52 
+		/* MIN   */ min(cart, elements).print("\n");         //-15.13 
+		/* MAX   */ max(cart, elements).print("\n");        //19.32 
+		/*MIN MAX*/ NUM* result = minmax(cart, elements);
+		result[0].print("\n"); 	//-15.13 
+		result[1].print("\n"); //19.32
+		/* REPL  */ NUM a("-3_000_000.0"); char* p = format(a); print(p); print("\n"); free(p); //-3,000,000.00 
+		print("----------------------\n");  		  //----------------------
+
 	} 
 
 ## CODING:  
