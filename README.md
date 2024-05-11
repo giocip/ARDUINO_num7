@@ -1,9 +1,9 @@
-# C++ ARITHMETIC-LOGIC DECIMAL CLASS LIBRARY WITH ARBITRARY PRECISION CAPABILITY FOR 64-BIT ARCHITECTURE (UNDER CONSTRUCTION)
+# C++ ARITHMETIC-LOGIC DECIMAL CLASS LIBRARY WITH ARBITRARY PRECISION CAPABILITY FOR 32-BIT ARDUINO ARCHITECTURE (UNDER CONSTRUCTION)
 ## _DESCRIPTION AND DOC_
 
-- _**`num7.h`**_ is a C++ high-level (python3 style), lightweight, floating-point computing header file for PRECISION DECIMAL ARITHMETIC.
+- _**`num7.h`**_ is a C++ high-level (python3 style), lightweight, floating-point computing header file for ARBITRARY PRECISION DECIMAL ARITHMETIC.
 
-Easy to use like school math and WITHOUT IEEE754 ISSUES or +0 AND -0 FAILURES, it can be deployed  
+Easy to use like school math and WITHOUT IEEE754 ISSUES AND COMPARING FAILURES, it can be deployed  
 for educational school, web e-commerce developing, accounting apps and general math programs included financial ones.  
 
 
