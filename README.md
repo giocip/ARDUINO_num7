@@ -55,6 +55,10 @@ for educational school, web e-commerce developing, accounting apps and general m
 
 	} 
 
+	void loop() {
+	
+	}
+ 
 ## CODING:  
 
 (=) assignment:  
@@ -289,6 +293,10 @@ OUTPUT LOCALIZATION, FORMATTING AND SQUARENESS:
 
 		asset(); //FUNCTION CALL 
 	} 
+	
+ 	void loop() {
+	
+	}
 	
 	/* Video output: 
 
