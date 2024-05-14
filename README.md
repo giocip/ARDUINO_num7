@@ -112,25 +112,26 @@ for educational school, web e-commerce developing, accounting apps and general m
 
 	NUM a("123_456_789.1234567891");     //DECLARATION AND INITIALIZATION 
 	NUM root = a.sqrt(); 	            //DECLARATION AND INITIALIZATION 
-	print("root = ", a, "\n");	   //root = 11111.111066
+	print("root = ", root, "\n");	   //root = 11111.111066
 
 (^) power operator and pow function:  
 
 	NUM a("3.14"), b(2);				     //DECLARATION AND INITIALIZATION 
 	NUM power = a.pow(9); 				    //DECLARATION AND INITIALIZATION 
 	print("power = ", power, "\n"); 		   //power = 29673.367320587092457984 
-	power = b ^ 32; 				  //INITIALIZATION 
+	power = (b ^ 32); 				  //INITIALIZATION (power need priority)
 	print("power = ", power, "\n"); 		 //power = 4294967296.0 
 	print("power = ", pow(a, b), "\n");		//power = 9.8596 
 
-logic (<, <=, >, >=, !=, ==) and relational operators (and, or, not).  
+logic (<, <=, >, >=, !=, ==) and relational operators (&&, ||, !).  
 
 (is ...):  
 
-	NUM a("3.0"), b("5.0"), c("1.53");  //DECLARATION AND INITIALIZATION 
-	print(a.is_positive(), "\n");      //1=true 
-	print(!a.is_zero(), "\n");        //1=true 
-	print(c.is_negative(), "\n");    //0=false 
+	NUM a("3.0"), b("-5.0"), c("1.53"); //DECLARATION AND INITIALIZATION 
+	print(a.is_positive(), "\n");      //1 (true) 
+	print(!a.is_zero(), "\n");        //1 (true) 
+	print(c.is_negative(), "\n");    //0 (false) 
+	print(b.is_negative(), "\n");   //1 (true) 
 
 (< <= > >= != ==): 
 
@@ -155,7 +156,7 @@ On a given NUM variable the following arithmetic methods are available.
 
 variable arithmetic:
 
-	NUM a = "10.25"; 		      //DECLARATION AND INITIALIZATION
+	NUM a("10.25"); 		      //DECLARATION AND INITIALIZATION
 	print(a, "\n"); 		     //10.25
 	print(a.inc(1), "\n"); 		    //11.25
 	print(a.dec(2), "\n");		   //9.25
@@ -164,23 +165,23 @@ variable arithmetic:
 	print(a = a.mul("5.01"), "\n"); //25.05
 	print(a, "\n");		       //25.05
 	print(a.clear(), "\n");	      //0.0
-	print("----------------------"); //----------------------
+	print("----------------------\n"); //----------------------
 	
-	NUM price("59.99"), rate = "22.00";                   //DECLARATION AND INITIALIZATION
+	NUM price("59.99"), rate("22.00");                    //DECLARATION AND INITIALIZATION
 	print(price, "\n");                                  //59.99
 	NUM price_industrial = price.spinoff(rate).round(); //DECLARATION AND INITIALIZATION
 	print(price_industrial, "\n");                     //49.17
 	price = price_industrial.spinon(rate).round();    //INITIALIZATION
-	print(price, "\n");                              //59.99 final price
-	char* p = (price - price.pct("17.49").round()) .format();
-	print(p, "\n"); free(p); 		       //49.50 discounted price
+	print(price, " final price\n");                  //59.99 final price
+	char *p = (price - price.pct("17.49").round()) .format();
+	print(p, " discounted price\n"); free(p);      //49.50 discounted price
 
 EVEN ODD numbering methods:
 
 	NUM a(6), b(3), c("3.14"); //DECLARATION AND INITIALIZATION
-	print(a, " INTEGER => "); print(a.is_integer(), "  EVEN => "); print(a.is_even(), "\n"); //6.0 INTEGER => 1(true)  EVEN => 1(true)
-	print(b, " INTEGER => "); print(a.is_integer(), "  ODD => "); print(b.is_odd(), "\n");  //3.0 INTEGER => 1(true)  ODD  => 1(true)
-	print(c, " FLOAT => "); print(c.is_floating(), "\n");				       //3.14 FLOAT  => 1(true)
+	print(a, " INTEGER => "); print(a.is_integer(), "  EVEN => "); print(a.is_even(), "\n"); //6.0 INTEGER => 1 (true)  EVEN => 1 (true)
+	print(b, " INTEGER => "); print(a.is_integer(), "  ODD => "); print(b.is_odd(), "\n");  //3.0 INTEGER => 1 (true)  ODD  => 1 (true)
+	print(c, " FLOAT => "); print(c.is_floating(), "\n");				       //3.14 FLOAT  => 1 (true)
 
 # Advanced logic programming snippets:
 
@@ -242,7 +243,7 @@ OUTPUT LOCALIZATION, FORMATTING AND SQUARENESS:
 	int decs = 2;
 	char* p = amount.format(decs, ',', SIGN);
 	print("US localization => ", p, "\n"); free(p); //US localization => +1,000,000.90
-	p = amount.format(decs, ',', SIGN);
+	p = amount.format(decs, '.', SIGN);
 	print("EU localization => ", p, "\n"); free(p); //EU localization => +1.000.000,90
     
 # Saving calculator: 
@@ -321,37 +322,37 @@ ROUNDING TYPES:
 		temp(area), temp2(area); 
 	print(area, "\n");                      //24.9832014216696 
 	print("---- NUM floor    rounding ----\n"); 
-	print(area.round_floor(1), "\n");     //24.9 
+	print(area.round_floor(1), " (1 decs)\n");     //24.9 (1 decs)
 	print("---- NUM ceil     rounding ----\n"); 
-	print(temp.round_ceil(1), "\n");    //25.0 
+	print(temp.round_ceil(1), " (1 decs)\n");    //25.0 (1 decs)
 	print("---- NUM standard rounding ----\n"); 
-	print(temp2.round(2), "\n");      //24.98 
+	print(temp2.round(2), " (2 decs)\n");      //24.98 (2 decs)
 
 UNSIGNED ARBITRARY PRECISION ARITHMETIC:
 
 	NUM a("18446744073709551615.05"), b("79557855184810661726.96"); //DECLARATION AND INITIALIZATION 
-	a.print(" "); b.print(" operands\n");
-	add(a, b).print(" sum\n");     //98004599258520213342.01 sum
-	sub(a, b).print(" dif\n");    //-61111111111101110111.91 dif
-	mul(a, b).print(" pro\n");   //1467583393647448798475303745564903690126.748 pro
-	div(a, b).print(" quo\n");  //0.2318657790718249449152307927340895034397 quo
-	mod(a, b).print(" rem\n"); //18446744073709551615.05 rem
+	a.print(" "); b.print(" operands\n"); //18446744073709551615.05 79557855184810661726.96 operands
+	add(a, b).print(" sum\n");           //98004599258520213342.01 sum
+	sub(a, b).print(" dif\n");          //-61111111111101110111.91 dif
+	mul(a, b).print(" pro\n");         //1467583393647448798475303745564903690126.748 pro
+	div(a, b).print(" quo\n");        //0.2318657790718249449152307927340895034397 quo
+	mod(a, b).print(" rem\n");       //18446744073709551615.05 rem
 	print("-----------------------------------------\n");
 	a = 3; b = 100; //INITIALIZATION 
-	a.print(" "); b.print(" operands\n");
-	pow(a, b).print(" exp\n"); //515377520732011331036461129765621272702107522001.0 exp
+	a.print(" "); b.print(" operands\n"); //3.0 100.0 operands
+	pow(a, b).print(" exp\n"); 	     //515377520732011331036461129765621272702107522001.0 exp
 
 double TO NUM CONVERSION ARRAY:
 
-	double listing[] = { 5.14, -2.1, 5.0, -2543.99355, -0.02 }; 
+	double listing[] = { 5.14, -2.1, 5.0, -2543.9935500002972, -0.02 }; 
 	NUM L[5]; 
 	int elements = sizeof(listing) / sizeof(listing[0]); 
-	print("elements="); print(elements, "\n"); 
-	print("----------------------\n"); 
+	print("elements="); print(elements, "\n"); //elements=5
+	print("----------------------\n"); 	  //----------------------
 
 	for (int i = 0; i < elements; i++)  
 		L[i] = L[i].from_double(listing[i]).round(5); //RECTIFIED BINARY APPROXIMATION! 
-	for (NUM l : L) print(l, "\n"); 
+	for (NUM l : L) print(l, "\n"); //5.14 -2.1 5.0 -2543.99355 -0.02
 	print("----------------------\n\n"); 
 
 ### FAQ 
