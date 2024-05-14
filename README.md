@@ -328,7 +328,7 @@ UNSIGNED ARBITRARY PRECISION ARITHMETIC:
 	a.print(" "); b.print(" operands\n");
 	pow(a, b).print(" exp\n"); //515377520732011331036461129765621272702107522001.0 exp
 
-double TO Num CONVERSION ARRAY:
+double TO NUM CONVERSION ARRAY:
 
 	double listing[] = { 5.14, -2.1, 5.0, -2543.99355, -0.02 }; 
 	NUM L[5]; 
@@ -352,7 +352,7 @@ and the result is:
 	0 (false)  
 	
 How instead can it gets exactly 0.3?  
-A. Using Num class:  
+A. Using NUM class:  
 
 	NUM A("0.1"), B("0.2");
 	print(A + B == "0.3", "\n"); //1 => true
@@ -364,7 +364,7 @@ Q. I have two double variables in my code:
 
 	double a = 123456.123, b = -123456789.123456;
 	
-How can i convert them in Num type with exact decimal digits?  
+How can i convert them in NUM type with exact decimal digits?  
 A. With from_double() and round() in-line functions:
 
 	double a = 123456.123, b = -123456789.123456; 
