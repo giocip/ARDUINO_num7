@@ -27,7 +27,9 @@ for educational school, web e-commerce developing, accounting apps and general m
 	using namespace num7; 
 
 	void setup() { 
-			
+		Serial.begin(9600); //open the serial port at 9600 bps
+  		delay(1000);       //waits for 1000 millisecond (1 second)
+
 		/* ADDITION           */ add("2.5", "3.6").print("\n"); 	    //6.1                 
 		/* SUBTRACTION        */ sub("2.5", "3.6").print("\n"); 	   //-1.1               
 		/* MULTIPLICATION     */ mul("2.5", "3.6").print("\n"); 	  //9.0                 
@@ -282,6 +284,9 @@ OUTPUT LOCALIZATION, FORMATTING AND SQUARENESS:
 	} 
 	
 	void setup() { 
+		Serial.begin(9600); //open the serial port at 9600 bps
+  		delay(1000);       //waits for 1000 millisecond (1 second)
+
 		asset(); //FUNCTION CALL 
 	} 
 	
