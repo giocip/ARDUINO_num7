@@ -94,7 +94,7 @@ for educational school, web e-commerce developing, accounting apps and general m
 	a = "3.0"; b = "5.7"; 		  //INITIALIZATION
 	R = a / b; 			//INITIALIZATION
 	print("R = "); print(R, "\n"); //R = 0.52631578947368421052631578947368
-	print("R = "); print(div(a, b).round()); //R = 0.53
+	print("R = "); print(div(a, b).round(), "\n"); //R = 0.53
 
 (% operator, divmod function) int division and floating-point remainder:  
 
@@ -102,10 +102,10 @@ for educational school, web e-commerce developing, accounting apps and general m
 	NUM quotient((a / b).trunk(0)); //DECLARATION AND INITIALIZATION 
 	NUM remainder(a % b); 	       //DECLARATION AND INITIALIZATION 
 	print("quotient = ");  quotient.print("\n");  	       //quotient = 150.0 
-	print("INTEGER remainder = "); remainder.print("\n"); //remainder = 14.0 
+	print("INTEGER remainder = "); remainder.print("\n"); //INTEGER remainder = 14.0 
 	a = "3.141592654"; b = 2;  			     //INITIALIZATION
 	quotient = (a / b).trunk(0); remainder = a % b; 
-	print("quotient = ");  quotient.print("\n"); 		     //Quotient = 1.0 
+	print("quotient = ");  quotient.print("\n"); 		     //quotient = 1.0 
 	print("FLOATING-POINT Remainder = "); remainder.print("\n");//FLOATING-POINT Remainder = 1.141592654 
 
 (sqrt) square root function:  
