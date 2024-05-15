@@ -328,7 +328,7 @@ ROUNDING TYPES:
 	print("\n---- NUM standard rounding ----\n"); 
 	print(temp2.round(2), " (2 decs)\n");          //25.52 (2 decs) 
 	print("\n---- NUM bank     rounding ----\n"); 
-	print(temp2.round_bank(-1), " (united )\n"); //20.0 (1 decs) 
+	print(temp2.round_bank(-1), " (united )\n"); //20.0 (-1 decs) 
 
 ARBITRARY PRECISION ARITHMETIC:
 
@@ -344,6 +344,26 @@ ARBITRARY PRECISION ARITHMETIC:
 	a.print(" "); b.print(" operands\n"); //3.0 100.0 operands
 	pow(a, b).print(" exp\n"); 	     //515377520732011331036461129765621272702107522001.0 exp
 
+SCIENTIFIC NOTATION AND HIGH PRECISION RESULTS:
+
+	NUM a("1.23456789"), //STANDARD NUMERIC NOTATION 
+		b("9.87654321"),							 
+		MUL(a * b);    //MULTIPLICATION 
+	double ieee754 = 1.23456789 * 9.87654321; 
+	NUM c; c.from_double(ieee754); 
+	print(c,   "  => MUL ieee754 - PRECISION FAILURE\n"); //12.193263111263525  => MUL ieee754 - PRECISION FAILURE 
+	print(MUL, " => MUL num7.h  - PRECISION SUCCESS\n"); //12.1932631112635269 => MUL num7.h  - PRECISION SUCCESS 
+	print("-----------------------------------------\n"); 
+
+	a = "1.23456789e300"; //SCIENTIFIC NUMERIC NOTATION 
+	b = "9.87654321e300"; 
+	ieee754 = 1.23456789e300 * 9.87654321e300; //MULTIPLICATION 
+	print(from_double(ieee754), "			=> MUL ieee754 - CAPACITY FAILURE\n"); 
+	MUL = a * b;         
+	char* p = MUL.to_exp(); 
+	print(p, " => MUL num7.h  - PRECISION SUCCESS\n"); free(p); //inf			=> MUL ieee754 - CAPACITY FAILURE 
+	print("-----------------------------------------\n");      //1.21932631112635269e601 = > MUL num7.h - PRECISION SUCCESS 
+ 
 double TO NUM CONVERSION ARRAY:
 
 	double listing[] = { 5.14, -2.1, 5.0, -2543.9935500002972, -0.02 }; 
