@@ -317,18 +317,18 @@ OUTPUT LOCALIZATION, FORMATTING AND SQUARENESS:
 	   
 ROUNDING TYPES:
 
-NUM r("2.85"), //DECLARATION AND INITIALIZATION 
-	area(r * r * pi()),
-	temp(area), temp2(area);
-print(area, "\n");                                   //25.517586332115
-print("\n---- NUM floor    rounding ----\n");
-print(area.round_floor(1), " (1 decs)\n");         //25.5 (1 decs)
-print("\n---- NUM ceil     rounding ----\n");
-print(temp.round_ceil(1), " (1 decs)\n");        //25.6 (1 decs)
-print("\n---- NUM standard rounding ----\n");
-print(temp2.round(2), " (2 decs)\n");          //25.52 (2 decs)
-print("\n---- NUM bank     rounding ----\n");
-print(temp2.round_bank(-1), " (united )\n"); //20.0 (1 decs)
+	NUM r("2.85"), //DECLARATION AND INITIALIZATION 
+		area(r * r * pi()), 
+		temp(area), temp2(area); 
+	print(area, "\n");                                   //25.517586332115 
+	print("\n---- NUM floor    rounding ----\n"); 
+	print(area.round_floor(1), " (1 decs)\n");         //25.5 (1 decs) 
+	print("\n---- NUM ceil     rounding ----\n"); 
+	print(temp.round_ceil(1), " (1 decs)\n");        //25.6 (1 decs) 
+	print("\n---- NUM standard rounding ----\n"); 
+	print(temp2.round(2), " (2 decs)\n");          //25.52 (2 decs) 
+	print("\n---- NUM bank     rounding ----\n"); 
+	print(temp2.round_bank(-1), " (united )\n"); //20.0 (1 decs) 
 
 ARBITRARY PRECISION ARITHMETIC:
 
