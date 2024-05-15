@@ -1,4 +1,4 @@
-# C++ ARITHMETIC-LOGIC DECIMAL CLASS LIBRARY WITH ARBITRARY PRECISION CAPABILITY FOR 32-BIT ARDUINO ARCHITECTURE (UNDER CONSTRUCTION)
+# C++ ARBITRARY PRECISION ARITHMETIC-LOGIC DECIMAL CLASS FOR 32-BIT ARDUINO ARCHITECTURE (work in progress ...)
 ## _DESCRIPTION AND DOC_
 
 - _**`num7.h`**_ is a C++ high-level (python3 style), lightweight, floating-point computing header file for ARBITRARY PRECISION DECIMAL ARITHMETIC.
@@ -96,7 +96,7 @@ for educational school, web e-commerce developing, accounting apps and general m
 	print("R = "); print(R, "\n"); //R = 0.52631578947368421052631578947368
 	print("R = "); print(div(a, b).round(), "\n"); //R = 0.53
 
-(% operator, divmod function) int division and floating-point remainder:  
+(% operator) integer division and floating-point remainder:  
 
 	a = 2564; b = 17; 		 //INITIALIZATION 
 	NUM quotient((a / b).trunk(0)); //DECLARATION AND INITIALIZATION 
@@ -328,7 +328,7 @@ ROUNDING TYPES:
 	print("---- NUM standard rounding ----\n"); 
 	print(temp2.round(2), " (2 decs)\n");      //24.98 (2 decs)
 
-UNSIGNED ARBITRARY PRECISION ARITHMETIC:
+ARBITRARY PRECISION ARITHMETIC:
 
 	NUM a("18446744073709551615.05"), b("79557855184810661726.96"); //DECLARATION AND INITIALIZATION 
 	a.print(" "); b.print(" operands\n"); //18446744073709551615.05 79557855184810661726.96 operands
@@ -361,7 +361,7 @@ Q. I usually try to add 0.1 to 0.2 in C++ with this code:
 
 	double a = 0.1, b = 0.2;
 	Serial.println(a + b == 0.3);   //0 => false
-and the result is:  
+and the comparing number result is:  
 
 	0 (false)  
 	
@@ -370,7 +370,7 @@ A. Using NUM class:
 
 	NUM A("0.1"), B("0.2");
 	print(A + B == "0.3", "\n"); //1 => true
-the result is:
+the comparing number result is:
 
 	1 (true)
 	
