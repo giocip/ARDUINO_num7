@@ -436,11 +436,12 @@ A. num7 library supports hi-level execution workflow code for arithmetic operati
 		while (error()) { //ERROR DETECTION
 			static int err_count = 1; //DECLARATION AND INITALIZATION
 			error_clear(); //CLEAR ERROR (Error = 0) => GLOABAL VARIABLE
-			b = "0.16";   //NEW (VALID) DIVISOR
+			if(err_count == 1) b = "0.00";
+			else b = "0.16";
 			print(a, " / "); print(b, " = ");
 			c = a / b;
-			err_count++;
 			if (err_count > 2) { print("SYSTEM RESET\n"); break; } //3 TIMES RETRIES AT ALL
+			err_count++;
 		}
 		if (!error()) print(c, "\n");
 	  	print("---------------------\n");
