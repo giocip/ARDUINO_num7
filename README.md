@@ -435,7 +435,7 @@ A. num7 library supports hi-level execution workflow code for arithmetic operati
 		NUM c(a / b);
 		while (error()) {
 		    static int err_count = 1;                //DECLARATION AND INITALIZATION
-		    error_clear(); 			    //CLEAR ERROR (Error = 0) => GLOABAL VARIABLE
+		    error_clear(); 			    //CLEAR ERROR (Error = 0) => GLOBAL VARIABLE
 		    if(err_count == 1) b = "0.00";         //ZERO DIVISON AGAIN (NOT VALID DIVISOR)
 		    else b = "0.16";			  //VALID DIVISOR
 		    print(a, " / "); print(b, " = ");
