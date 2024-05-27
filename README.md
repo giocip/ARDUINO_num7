@@ -419,3 +419,31 @@ Can i input them without double quotes and suffix .0?
 A. Yes, this the way:
 
 	NUM a(123), b(456), c(789);  
+
+Q. I need managing zero division error in C++; How can do it?  
+A. num7 library supports hi-level execution workflow code for arithmetic operation errors:
+
+	#include "num7.h"
+	using namespace num7;
+
+	void setup() {
+		Serial.begin(9600);            // open the serial port at 9600 bps:
+		 delay(1000);                 // waits for 1000 millisecond (1 second)
+	
+		NUM a("3.6"), b("0.00");
+		print(a, " / "); print(b, " = ");
+		NUM c(a / b); //DIVISION BY ZERO
+		while (error()) { //ERROR DETECTION
+			static int err_count = 1; //DECLARATION AND INITALIZATION
+			error_clear(); //CLEAR ERROR (Error = 0) => GLOABAL VARIABLE
+			b = "0.16";   //NEW (VALID) DIVISOR
+			print(a, " / "); print(b, " = ");
+			c = a / b;
+			err_count++;
+			if (err_count > 2) { print("SYSTEM RESET\n"); break; } //3 TIMES RETRIES AT ALL
+		}
+		if (!error()) print(c, "\n");
+	  	print("---------------------\n");
+	}
+
+	void loop() {}
