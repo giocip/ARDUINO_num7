@@ -444,6 +444,7 @@ A. num7 library supports hi-level execution workflow code for arithmetic operati
 		    err_count++;
 		}
 		if (!error()) print(c, "\n");
+  		else { print("SYSTEM RESET -EXIT\n"); return; }
 	  	print("---------------------\n");
 	}
 
