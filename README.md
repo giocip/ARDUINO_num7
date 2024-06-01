@@ -377,6 +377,16 @@ double TO NUM CONVERSION ARRAY:
 	for (NUM l : L) print(l, "\n"); //5.14 -2.1 5.0 -2543.99355 -0.02
 	print("----------------------\n\n"); 
 
+ EFFECTIVE EXPRESSIONS NEED OF TEMPORARY VARIABLES:
+
+	NUM base(3), h(4);				      //RIGHT-ANGLE TRIANGLE BASE AND HEIGHT
+	NUM b2, h2;					     //TEMPORARY VARIABLES
+	print("base = ", base, "  h = "); print(h, "\n");   //base = 3.0  h = 4.0
+	NUM hyp = sqr((b2 = base.x2()) + (h2 = h.x2()));   //PYTHAGOREAN EXPRESSION NEED OF TEMPORARY VARs
+	print("HYPOTENUSE = "); hyp.print("\n");	  //HYPOTENUSE = 5.0
+	NUM AREA = base * h / 2;			 //AREA EXPRESSION
+	print("AREA = "); AREA.print("\n");	        //AREA = 6
+
 ### FAQ 
 
 Q. I usually try to add 0.1 to 0.2 in C++ with this code:  
