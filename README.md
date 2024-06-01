@@ -387,6 +387,33 @@ double TO NUM CONVERSION ARRAY:
 	NUM AREA = base * h / 2;			 //AREA EXPRESSION
 	print("AREA = "); AREA.print("\n");	        //AREA = 6
 
+ ERROR HANDLING:
+
+	#include "num7.h"
+	using namespace num7;
+	
+	void setup() {
+	      Serial.begin(9600);            //open the serial port at 9600 bps:
+	      delay(1000);                  //waits for 1000 millisecond (1 second)
+
+	      NUM base = "3", h = "4";                                  //SYNTAX ERROR, RIGHT-ANGLE TRIANGLE BASE AND HEIGHT (ERROR ARGUMENT VALUE => NUM CONSTRUCTOR: [3])
+	      if(error()) {                                            //DETECT ERRORs (ERROR ARGUMENT VALUE => NUM CONSTRUCTOR: [4])
+	        print("INITIALIZATION VARIABLEs ERROR\n");
+	        base = "3.0"; h = "4.0";			     //SYNTAX OK
+	        error_clear();                                      //CLEAR ERROR
+	      }  
+	      NUM b2, h2;					  //TEMPORARY VARIABLES
+	      print("base = ", base, "  h = "); print(h, "\n");  //base = 3.0  h = 4.0
+	      NUM hyp = sqr((b2 = base.x2()) + (h2 = h.x2()));  //PYTHAGOREAN EXPRESSION NEED OF TEMPORARY VARs
+	      print("HYPOTENUSE = "); hyp.print("\n");	       //HYPOTENUSE = 5.0
+	      NUM AREA = base * h / 2;			      //AREA EXPRESSION
+	      print("AREA = "); AREA.print("\n");	     //AREA = 6
+	
+	  	print("---------------------\n");
+	}
+
+	void loop() {} 
+
 ### FAQ 
 
 Q. I usually try to add 0.1 to 0.2 in C++ with this code:  
