@@ -464,13 +464,13 @@ A. num7 library supports hi-level execution workflow code for arithmetic operati
 	using namespace num7;
 
 	void setup() {
-		Serial.begin(9600);            //open the serial port at 9600 bps:
+		Serial.begin(9600);           //open the serial port at 9600 bps:
 		delay(1000);                 //waits for 1000 millisecond (1 second)
 	
 		NUM a("3.6"), b("0.00");
 		print(a, " / "); print(b, " = ");
-		NUM c(a / b);
-		while (error()) {
+		NUM c(a / b);		 //ERROR DIVISION BY ZERO => operator/: [S=0 CE=0.0e0 C=0.0 E=0 len_I=1 len_F=1]
+	while (error()) {		//!!! EXCEPTION HANDLER !!!
 		    static int err_count = 1;                //DECLARATION AND INITALIZATION
 		    error_clear(); 			    //CLEAR ERROR (Error = 0) => GLOBAL VARIABLE
 		    if(err_count == 1) b = "0.00";         //ZERO DIVISON AGAIN (NOT VALID DIVISOR)
@@ -480,7 +480,7 @@ A. num7 library supports hi-level execution workflow code for arithmetic operati
 		    if (err_count > 2) { print("SYSTEM RESET\n"); break; } //3 TIMES RETRIES AT ALL
 		    err_count++;
 		}
-		if (!error()) print(c, "\n");
+		if (!error()) print(c, "\n"); 				//3.6 / 0.16 = 22.5 //OK
   		else { print("SYSTEM RESET -EXIT\n"); return; }
 	  	print("---------------------\n");
 	}
