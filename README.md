@@ -486,3 +486,11 @@ A. num7 library supports hi-level execution workflow code for arithmetic operati
 	}
 
 	void loop() {}
+
+Q. I need getting result in scientific notation; How can code it? 
+A. With the following code:
+
+	NUM a("85.0e1900"), b = "13.0e1940", PRO = a * b; 
+	PRO = PRO.into_sci();
+	PRO.print_exp("\n"); //1.105e3843
+	//PRO.print("\n");  //STANDARD NUMERIC NOTATION	1105...0
