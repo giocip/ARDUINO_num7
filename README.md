@@ -209,7 +209,7 @@ EVEN ODD numbering methods:
 	double A = -0.3; //double question //DECLARATION AND INITIALIZATION 
 	A += 0.1; A += 0.1; A += 0.1; 
 	if (A == 0.0) print("double, SUCCESS"); 
-	else print("double, FAILURE because ", String(A).c_str(), " is not equal 0.0\n"); //double issue 
+	else print("double, FAILURE because ", String(A, 19).c_str(), " is not equal 0.0\n"); //double issue 
 	print("----------------------\n"); 
 	
 	NUM a("-0.3"); //NUM question //DECLARATION AND INITIALIZATION 
