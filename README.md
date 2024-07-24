@@ -28,7 +28,7 @@ for educational school, web e-commerce developing, accounting apps and general m
 	
 	void setup() { 
 		Serial.begin(9600); //open the serial port at 9600 bps
-		delay(1000);       //waits for 1000 millisecond (1 second)
+		delay(2500);       //waits for 2500 milliseconds (2.5 seconds)
 	
 		/* ADDITION           */ add("2.5", "3.6").print(" = 2.5 + 3.6 (ADDITION)\n"); 	           //6.1                 
 		/* SUBTRACTION        */ sub("2.5", "3.6").print(" = 2.5 - 3.6 (SUBTRACTION)\n"); 	  //-1.1               
@@ -311,7 +311,7 @@ OUTPUT LOCALIZATION, FORMATTING AND SQUARENESS:
 	
 	void setup() { 
 		Serial.begin(9600); //open the serial port at 9600 bps
-  		delay(1000);       //waits for 1000 millisecond (1 second)
+  		delay(2500);       //waits for 2500 milliseconds (2.5 seconds)
 
 		asset(); //FUNCTION CALL 
 	} 
@@ -415,7 +415,7 @@ double TO NUM CONVERSION ARRAY:
 	
 	void setup() {
 	      Serial.begin(9600);            //open the serial port at 9600 bps:
-	      delay(1000);                  //waits for 1000 millisecond (1 second)
+	      delay(2500);       	    //waits for 2500 milliseconds (2.5 seconds)
 
 	      NUM base = "3", h = "4";                                  //SYNTAX ERROR, RIGHT-ANGLE TRIANGLE BASE AND HEIGHT (ERROR ARGUMENT VALUE => NUM CONSTRUCTOR: [3])
 	      if(error()) {                                            //DETECT ERRORs (ERROR ARGUMENT VALUE => NUM CONSTRUCTOR: [4])
@@ -486,7 +486,7 @@ A. num7 library supports hi-level execution workflow code for arithmetic operati
 
 	void setup() {
 		Serial.begin(9600);           //open the serial port at 9600 bps:
-		delay(1000);                 //waits for 1000 millisecond (1 second)
+		delay(2500);       	     //waits for 2500 milliseconds (2.5 seconds)
 	
 		NUM a("3.6"), b("0.00");
 		print(a, " / "); print(b, " = ");
