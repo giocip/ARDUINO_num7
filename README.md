@@ -381,7 +381,7 @@ SCIENTIFIC NOTATION AND HIGH PRECISION RESULTS:
 	ieee754 = 1.23456789e300 * 9.87654321e300; //MULTIPLICATION 
 	print(from_double(ieee754), "			=> MUL ieee754 - CAPACITY FAILURE\n"); 
 	MUL = a * b;         
-	char* p = MUL.to_exp(); 
+	char* p = MUL.to_sci(); 
 	print(p, " => MUL num7.h  - PRECISION SUCCESS\n"); free(p); //inf			=> MUL ieee754 - CAPACITY FAILURE 
 	print("-----------------------------------------\n");      //1.21932631112635269e601 = > MUL num7.h - PRECISION SUCCESS 
  
