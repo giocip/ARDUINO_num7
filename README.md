@@ -141,7 +141,7 @@ for educational school, web e-commerce developing, accounting apps and general m
 	NUM a("3.14"), b(2);				     //DECLARATION AND INITIALIZATION 
 	NUM power = a.pow(9); 				    //DECLARATION AND INITIALIZATION 
 	print("power = ", power, "\n"); 		   //power = 29673.367320587092457984 
-	power = (b ^ 32); 				  //INITIALIZATION (power need priority)
+	power = (b ^ 32); 				  //INITIALIZATION (power needs priority)
 	print("power = ", power, "\n"); 		 //power = 4294967296.0 
 	print("power = ", pow(a, b), "\n");		//power = 9.8596 
 
@@ -404,7 +404,7 @@ double TO NUM CONVERSION ARRAY:
 	NUM base(3), h(4);				      //RIGHT-ANGLE TRIANGLE BASE AND HEIGHT
 	NUM b2, h2;					     //TEMPORARY VARIABLES
 	print("base = ", base, "  h = "); print(h, "\n");   //base = 3.0  h = 4.0
-	NUM hyp = sqr((b2 = base.x2()) + (h2 = h.x2()));   //PYTHAGOREAN EXPRESSION NEED OF TEMPORARY VARs
+	NUM hyp = sqr((b2 = base.x2()) + (h2 = h.x2()));   //PYTHAGOREAN EXPRESSION NEEDS OF TEMPORARY VARs
 	print("HYPOTENUSE = "); hyp.print("\n");	  //HYPOTENUSE = 5.0
 	NUM AREA = base * h / 2;			 //AREA EXPRESSION
 	print("AREA = "); AREA.print("\n");	        //AREA = 6
@@ -426,7 +426,7 @@ double TO NUM CONVERSION ARRAY:
 	      }  
 	      NUM b2, h2;					  //TEMPORARY VARIABLES
 	      print("base = ", base, "  h = "); print(h, "\n");  //base = 3.0  h = 4.0
-	      NUM hyp = sqr((b2 = base.x2()) + (h2 = h.x2()));  //PYTHAGOREAN EXPRESSION NEED OF TEMPORARY VARs
+	      NUM hyp = sqr((b2 = base.x2()) + (h2 = h.x2()));  //PYTHAGOREAN EXPRESSION NEEDS OF TEMPORARY VARs
 	      print("HYPOTENUSE = "); hyp.print("\n");	       //HYPOTENUSE = 5.0
 	      NUM AREA = base * h / 2;			      //AREA EXPRESSION
 	      print("AREA = "); AREA.print("\n");	     //AREA = 6
