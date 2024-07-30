@@ -4,7 +4,7 @@
 - _**`num7.h`**_ is a C++ high-level (python3 style), lightweight, floating-point computing header file for ARBITRARY PRECISION DECIMAL ARITHMETIC.
 
 Easy to use like school math and WITHOUT IEEE754 ISSUES AND NUMBER COMPARING FAILURES, it can be deployed  
-for educational school, web e-commerce developing, accounting apps and general math programs included financial ones.  
+for educational school, web e-commerce developing, accounting apps and general math programs included financial ones and AI compliance.  
 
 
 ---
@@ -51,7 +51,7 @@ for educational school, web e-commerce developing, accounting apps and general m
 		/* ROUND BANKING      */ round_bank(pi(), 7).print(" =~ 3.141592654 (ROUND BANKING 7 DIGITS)\n");    //3.1415926
 		/* ABS                */ Abs("-5.25").print(" (ABSOLUTE VALUE OF -5.25)\n"); 		            //5.25 
 		/* EXP                */ NUM n3("314.0e-2"); n3.print(" = 314.0e-2 (EXP)\n");                      //3.14 = 314.0e-2 (EXP)
-  		/* SCIENTIFIC         */ NUM n3("314.0e-2"); into_exp(n3).print(" = 3.14e0 (SCI)\n");              //3.14 = 3.14e0 (SCI)
+  		/* SCIENTIFIC         */ NUM n4("314.0e-2"); into_exp(n4).print(" = 3.14e0 (SCI)\n");              //3.14 = 3.14e0 (SCI)
 		/* pi                 */ pi().print(" (pi)\n"); 						  //3.1415926535897932384626433832795
 		/* e                  */ e().print(" (e)\n");  							 //2.7182818284590452353602874713527
 		/* 10 TIME VALUE      */ _10x("5.25").print(" (10 TIME VALUE OF 5.25)\n");                      //52.5
