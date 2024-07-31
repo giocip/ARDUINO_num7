@@ -1,0 +1,10 @@
+name=num7
+version=1.0.0
+author=Giovanni Cipriani <giocip7@gmail.com>
+maintainer=Giovanni Cipriani <giocip7@gmail.com>
+sentence=ARBITRARY PRECISION GENERAL PURPOSE ARITHMETIC-LOGIC DECIMAL CLASS
+paragraph=C++ 32-BIT LIBRARY
+category=Data Processing
+url=https://github.com/giocip/num7
+architectures=samd,esp32
+
