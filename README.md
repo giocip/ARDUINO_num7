@@ -33,7 +33,7 @@ for educational school, web e-commerce developing, accounting apps and general m
 		/* ADDITION           */ add("2.5", "3.6").print(" = 2.5 + 3.6 (ADDITION)\n"); 	           //6.1                 
 		/* SUBTRACTION        */ sub("2.5", "3.6").print(" = 2.5 - 3.6 (SUBTRACTION)\n"); 	  //-1.1               
 		/* MULTIPLICATION     */ mul("2.5", "3.6").print(" = 2.5 * 3.6 (MULTIPLICATION)\n"); 	 //9.0                 
-		/* DIVISION           */ div("2.5", "3.6").print(" = 2.5 / 3.6 (DIVISION)\n"); 	        //0.6944444444444444444
+		/* DIVISION           */ div("2.5", "3.6").print(" = 2.5 / 3.6 (DIVISION)\n"); 	        //0.6944444444444444444444444444444444444444
 		/* DIVISION REMAINDER */ mod("11.0", "8.0").print(" = 11 % 8 (DIVISION REMAINDER)\n"); //3.0                 
 		/* INV                */ inv("3.0").print(" = 1 / 3 (INV)\n");  //0.33333333333333333333333333333333                
 		/* x2                 */ x2("3.0").print(" = 3 ^ 2 (x2)\n");   //9.0
@@ -441,7 +441,7 @@ double TO NUM CONVERSION ARRAY:
 Q. I usually try to add 0.1 to 0.2 in C++ with this code:  
 
 	double a = 0.1, b = 0.2;
-	Serial.println(a + b == 0.3);   //0 => false
+	print(a + b == 0.3);   //0 => false
 and the comparing number result is:  
 
 	0 (false)  
