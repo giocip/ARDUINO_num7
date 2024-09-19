@@ -1,4 +1,4 @@
-# C++ ARBITRARY PRECISION ARITHMETIC-LOGIC DECIMAL CLASS FOR 32-BIT ARDUINO ARCHITECTURE (work in progress ...)
+# C++ ARBITRARY PRECISION ARITHMETIC-LOGIC DECIMAL CLASS FOR 32-BIT ARDUINO ARCHITECTURE 
 ## _DESCRIPTION AND DOC_
 
 - _**`num7.h`**_ is a C++ high-level (python3 style), lightweight, floating-point computing header file for ARBITRARY PRECISION DECIMAL ARITHMETIC.
@@ -60,14 +60,14 @@ for educational school, web e-commerce developing, accounting apps and general m
 		/* DIVIDE FOR 10      */ _10div("5.25").print(" (DIVISION FOR TEN OF 5.25)\n");              //0.525
 		/* DIVIDE FOR 100     */ _100div("5.25").print(" (DIVISION FOR HUNDRED OF 5.25)\n");        //0.0525
 		/* DIVIDE FOR 1000    */ _1000div("5.25").print(" (DIVISION FOR THOUSAND OF 5.25)\n");     //0.00525
-		/* PERCENTAGE         */ pct("3.725", "150.00").round(2).print(" = 3.725% OF 150 (PERCENTAGE)\n");        //3.73
+		/* PERCENTAGE         */ pct("3.725", "150.00").round(2).print(" = 3.725% OF 150 (PERCENTAGE)\n");        //5.59
 		/* PERTHOUSAND        */ pth("2.00", "20_000.00").round(2).print(" = 2PTH OF 20000 (PERTHOUSAND)\n");    //40.0
 		/* SPIN-OFF           */ spinoff("22.00", "1_299.00").round(2).print(" = (-22%) 1299 (SPIN-OFF)\n"); 	//1064.75
 		/* SPIN-ON            */ spinon("22.00", "1_064.75").round(2).print(" = +22% OF 1064.75 (SPIN-ON)\n"); //1299.0
 		print("----------------------\n"); 								      //---------------------- 
-		int elements = 5; NUM cart[elements] ; 				  			  	     //19.31999 19.32 18.37 -15.13 -15.12 => ELEMENTS
-		cart[0] = "19.31999"; cart[1] = "19.32" ; cart[2] = "18.37"; cart[3] = "-15.13" ; cart[4] = "-15.12" ; //
-		for (elements = 0 ; elements < 5; elements++) print(cart[elements], " "); print("=> ELEMENTS\n");     //
+		int elements = 5; NUM cart[elements] ; 				  			  	     
+		cart[0] = "19.31999"; cart[1] = "19.32" ; cart[2] = "18.37"; cart[3] = "-15.13" ; cart[4] = "-15.12" ; 
+		for (elements = 0 ; elements < 5; elements++) print(cart[elements], " "); print("=> ELEMENTS\n");     //19.31999 19.32 18.37 -15.13 -15.12 => ELEMENTS 
 		/* SUM   */ sum(cart, elements).print(" => SUM\n");            //26.75999 
 		/* MEAN  */ mean(cart, elements).round().print(" => MEAN\n"); //5.35
 		/* MIN   */ min(cart, elements).print(" => MIN\n");          //-15.13 
