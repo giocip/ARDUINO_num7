@@ -1693,9 +1693,10 @@ public:
         W = i * d - (int)strlen(p[1]); free(p[0]);
         char* SN = (char*)malloc(((int)strlen(sn) + W + 4) * sizeof(char)); if (freemem() < RAM_SYS) reset();
         rm_c(sn, '.');      //REMOVE DOT CHARACTER (.)
-        strcpy(SN, sn); free(sn); 
+        strcpy(SN, sn); //free(sn); 
         if (W >= 0) { pad = strpads0(W); strcat(SN, pad); free(pad); }
         else SN[(int)strlen(sn) + W] = '\0'; //FIXING STRING 
+	free(sn);
         strcat(SN, ".0");
         z = n = SN; free(SN);
         s = z + 1;
