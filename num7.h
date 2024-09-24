@@ -365,6 +365,10 @@ NUM& copy(NUM&, NUM&);
 int test_num7();
 NUM& into_sci(NUM&);
 NUM& into_exp(NUM&);
+int mul_check(NUM, NUM, NUM);
+int add_check(NUM, NUM, NUM);
+int sub_check(NUM, NUM, NUM);
+int div_check(NUM, NUM, NUM);
 
 void reset();
 void (* reset_avr) (void) = 0; //DEFINITION AND PROTOTYPE ////////////////////// END FUNCTION PROTO   ///////////////////////////
@@ -6124,55 +6128,112 @@ int is_strfmt_num(const char* s) {
 }
 /// NUM OUT-LINE /// NUMERIC STRING LIST FOR ARITHMETIC OPERATION TEST, CODE: test_num7() //...
 int test_num7() {
-    const char* L[10] = {
-      "1.0", 
-      "-103.0",
-      "954165405446.0",
-      "-456789357444877954666666689389357444877954666665744487795466666666893893574448779546666657444877954666666666893574448779546666666893893574448779546666657444877954666666666893574448779546666666666666689357444877954666666644444495486470.0",
-      "0.0000000000000000000000000000000000000000000000000000000000000000000008935744876408935744876446387797795466666935744487795466666574448779546666665466666463877089357448767795466666935744487795466666574448779546666664463877954666695466666",
-      "-893574489357444877954668938893574448779546666693574448779546666657444877954666666668935744487795466666487795466666.0",
-      "8935744487795466666.65401",
-      "-6577116546540.654981112370893574487644638779546666680893574487644638779546666695440456795132",
-      "777549511321456795134440.0333",
-      "-951089357448764089357448764463877954666664638089350893574487644638779546666674487644638779546666677954666666540.649821222230",
-    };
-    for(int i = 0; i < 10; i++) {
-        for (int j = 0; j < 10; j++) {
-            print(L[i], " + "); print(L[j], " = ");
-            add(L[i], L[j]).print("\n");
-            print("------------------------------\n");
+const char* L[10] = {
+    "1.0",
+    "-103.0",
+    "954165405446.0",
+    "-456789357444877954666666689389357444877954666665744487795466666666893893574448779546666657444877954666666666893574448779546666666893893574448779546666657444877954666666666893574448779546666666666666689357444877954666666644444495486470.0",
+    "0.0000000000000000000000000000000000000000000000000000000000000000000008935744876408935744876446387797795466666935744487795466666574448779546666665466666463877089357448767795466666935744487795466666574448779546666664463877954666695466666",
+    "-893574489357444877954668938893574448779546666693574448779546666657444877954666666668935744487795466666487795466666.0",
+    "8935744487795466666.65401",
+    "-6577116546540.654981112370893574487644638779546666680893574487644638779546666695440456795132",
+    "777549511321456795134440.0333",
+    "-951089357448764089357448764463877954666664638089350893574487644638779546666674487644638779546666677954666666540.649821222230",
+};
+NUM SUM, DIF, PRO, QUO, Q, REM;
+for (i64 i = 0; i < 10; i++) {
+    for (i64 j = 0; j < 10; j++) {
+	SUM = add(L[i], L[j]);
+	if (Error) {
+	    print("\nFAILURE - THIS SYSTEM DOES NOT SUPPORT ARBITRARY PRECISION ARITHMETIC!\n");
+	    exit(1);
+	}
 
-            print(L[i], " - "); print(L[j], " = ");
-            sub(L[i], L[j]).print("\n");
-            print("------------------------------\n");
+	if (add_check(L[i], L[j], SUM)) {
+	    print(L[i], " + "); print(L[j], " = ");
+	    SUM.print("\n");
+	    print("\nFAILURE - THIS SYSTEM DOES NOT SUPPORT ARBITRARY PRECISION ARITHMETIC!\n");
+	    exit(1);
+	}
+	else print("addition passed.\n");
 
-            print(L[i], " * "); print(L[j], " = ");
-            mul(L[i], L[j]).print("\n");
-            print("------------------------------\n");
+	print("------------------------------\n");
 
-            print(L[i], " / "); print(L[j], " = ");
-            div(L[i], L[j]).print("\n");
-            print("------------------------------\n");
-            
-            print(L[i], " % "); print(L[j], " = ");
-            mod(L[i], L[j]).print("\n");
-            print("------------------------------\n");
+	DIF = sub(L[i], L[j]);
+	if (Error) {
+	    print("\nFAILURE - THIS SYSTEM DOES NOT SUPPORT ARBITRARY PRECISION ARITHMETIC!\n");
+	    exit(1);
+	}
 
-            print(L[i], " inv "); print(" = ");
-            inv(L[i]).print("\n");
-            print("------------------------------\n");
+	if (sub_check(L[i], L[j], DIF)) {
+	    print(L[i], " - "); print(L[j], " = ");
+	    DIF.print("\n");
+	    print("\nFAILURE - THIS SYSTEM DOES NOT SUPPORT ARBITRARY PRECISION ARITHMETIC!\n");
+	    exit(1);
+	}
+	else print("subtraction passed.\n");
+	print("------------------------------\n");
 
-            print(L[j], " x2 "); print(" = ");
-            x2(L[j]).print("\n");
-            print("------------------------------\n");
+	PRO = mul(L[i], L[j]);
+	if (Error) {
+	    print("\nFAILURE - THIS SYSTEM DOES NOT SUPPORT ARBITRARY PRECISION ARITHMETIC!\n");
+	    exit(1);
+	}
 
-            print(L[j], " x3 "); print(" = ");
-            x3(L[j]).print("\n");
-            print("------------------------------\n");
-            print("------------------------------\n");
-        }
+	if (mul_check(L[i], L[j], PRO)) {
+	    print(L[i], " * "); print(L[j], " = ");
+	    PRO.print("\n");
+	    print("\nFAILURE - THIS SYSTEM DOES NOT SUPPORT ARBITRARY PRECISION ARITHMETIC!\n");
+	    exit(1);
+	}
+	else print("multiplication passed.\n");
+	print("------------------------------\n");
+
+	QUO = div(L[i], L[j]).round_floor();
+	if (Error) {
+	    print("\nFAILURE - THIS SYSTEM DOES NOT SUPPORT ARBITRARY PRECISION ARITHMETIC!\n");
+	    exit(1);
+	}
+
+	REM = L[i] - QUO * L[j];
+	if (div_check(L[i], L[j], REM)) {
+	    print(L[i], " % "); print(L[j], " = ");
+	    QUO.print("\n");
+	    print("\nFAILURE - THIS SYSTEM DOES NOT SUPPORT ARBITRARY PRECISION ARITHMETIC!\n");
+	    exit(1);
+	}
+	else print("division passed.\n");
+	print("------------------------------\n");
+
+	print(L[i], " / "); print(L[j], " = ");
+	div(L[i], L[j]).print("\n");
+	print("------------------------------\n");
+
+
+	print(L[j], " inv "); print(" = ");
+	inv(L[j]).print("\n");
+	print("------------------------------\n");
+
+	print(L[j], " x2 "); print(" = ");
+	x2(L[j]).print("\n");
+	print("------------------------------\n");
+
+	print(L[j], " x3 "); print(" = ");
+	x3(L[j]).print("\n");
+	print("------------------------------\n");
+
+	print(L[j], " ^ 8.0"); print(" = ");
+	xy(L[j], "8.0").print("\n");
+	print("------------------------------\n");
+	print("------------------------------\n");
     }
-    return 0;
+    if (Error) {
+	print("\nFAILURE - THIS SYSTEM DOES NOT SUPPORT ARBITRARY PRECISION ARITHMETIC!\n");
+	exit(1);
+    }
+}
+print("\nSUCCESS - THIS SYSTEM DOES SUPPORT ARBITRARY PRECISION ARITHMETIC.\n");
+return 0;
 }
 /// NUM OUT-LINE /// CALCULATOR MODE: RETURN SCIENTIFIC NOTATION NUMBER OBJECT, CODE: NUM a("123.0e45"), b("678.0e9"), c = a * b; NUM d = into_sci(c); d.print_fields(); //S=0 CE=8.3394e58 C=8.3394 E=58 len_I=1 len_F=4 SCIENTIFIC NOTATION
 NUM& into_sci(NUM& a) {
@@ -6187,7 +6248,75 @@ NUM& into_exp(NUM& a) {
     a = n; free(n);
     return a;
 }
-
+/// NUM OUT-LINE /// CHECK MULTIPLICATION OPERATION, CODE: NUM a(12), b(123); print(a, " * "); print(b, " = "); NUM proof = 1476; print(proof, " PRODUCT RESULT => "); print(mul_check(a, b, proof) ? "FAILURE" : "success", "\n"); //12.0 * 123.0 = 1476.0 PRODUCT RESULT => success
+int mul_check(NUM F1, NUM F2, NUM PRO) {
+	i64 sum = 0, sum2 = 0;
+	char s[4];
+	//PRODUCT SIGN CHECKING...
+	if (F1.S && F2.S && !PRO.S);          // - - => + 
+	else if (!F1.S && !F2.S && !PRO.S);  //  + + => +
+	else if (F1.S && !F2.S && PRO.S);   //   - + => -
+	else if (!F1.S && F2.S && PRO.S);  //    + - => - 
+	else if ((F1 == "0.0" || F2 == "0.0") && PRO == "0.0") return 0; //ZERO PRODUCT RESULT CHECKING... SUCCESS
+	else return 1; //... FAILURE
+	char* F1_S = exp2num(F1);   //CHECKING PRODUCT RESULT
+	if (F1.S) rm_c(F1_S, '-'); //CLEAR MINUS SIGN
+	rm_c(F1_S, '.');          //CLEAR DOT
+	i64 F1_Slen = (i64)strlen(F1_S);
+	for (i64 i = 0; i < F1_Slen; i++) {
+		if (F1_S[i] == '0') continue; //SKIP ZERO DIGITS
+		sum += F1_S[i] - '0'; if (sum > 9) sum -= 9;
+	}
+	free(F1_S);
+	char* F2_S = exp2num(F2);
+	if (F2.S) rm_c(F2_S, '-'); //CLEAR MINUS SIGN
+	rm_c(F2_S, '.');          //CLEAR DOT
+	i64 F2_Slen = (i64)strlen(F2_S);
+	for (i64 i = 0; i < F2_Slen; i++) {
+		if (F2_S[i] == '0') continue; //SKIP ZERO DIGITS
+		sum2 += F2_S[i] - '0'; if (sum2 > 9) sum2 -= 9;
+	}
+	free(F2_S);
+	strcpy(s, i64str(sum * sum2));
+	i64 slen = (i64)strlen(s);
+	sum = 0;
+	for (i64 i = 0; i < slen; i++) {
+		if (s[i] == '0') continue; //SKIP ZERO DIGITS
+		sum += s[i] - '0'; if (sum > 9) sum -= 9;
+	}
+	char* PRO_s = exp2num(PRO);
+	sum2 = 0;
+	if (PRO.S) rm_c(PRO_s, '-'); //CLEAR MINUS SIGN
+	rm_c(PRO_s, '.');           //CLEAR DOT
+	i64 PRO_slen = (i64)strlen(PRO_s);
+	for (i64 i = 0; i < PRO_slen; i++) {
+		if (PRO_s[i] == '0') continue; //SKIP ZERO DIGITS
+		sum2 += PRO_s[i] - '0'; if (sum2 > 9) sum2 -= 9;
+	}
+	free(PRO_s);
+	return !(sum2 == sum);
+}
+/// NUM OUT-LINE /// CHECK ADDITION OPERATION, CODE: NUM a(12), b(10); print(a, " + "); print(b, " = "); NUM proof = 22; print(proof, " ADDITION RESULT => "); print(add_check(a, b, proof) ? "FAILURE" : "success", "\n"); //12.0 + 10.0 = 22.0 ADDITION RESULT => success
+int add_check(NUM A1, NUM A2, NUM SUM) {
+	static NUM a1;
+	a1 = A1;
+	return !(a1 == SUM - A2);
+}
+/// NUM OUT-LINE /// CHECK SUBTRACTION OPERATION, CODE: NUM a(12), b(10); print(a, " - "); print(b, " = "); NUM proof = 2; print(proof, " SUBTRACTION RESULT => "); print(sub_check(a, b, proof) ? "FAILURE" : "success", "\n"); //12.0 - 10.0 = 2.0 SUBTRACTION RESULT => success
+int sub_check(NUM M, NUM S, NUM DIF) {
+	static NUM m;
+	m = M;
+	return !(m == DIF + S);
+}
+/// NUM OUT-LINE /// CHECK DIVISION OPERATION, CODE: NUM a(12), b(10); print(a, " % "); print(b, " = "); NUM proof = 2; print(proof, " DIVISION REM RESULT => "); print(div_check(a, b, proof) ? "FAILURE" : "success", "\n"); //12.0 % 10.0 = 2.0 DIVISION REM RESULT => success
+int div_check(NUM N, NUM DIV, NUM REM) {
+	NUM Q(div(N, DIV).round_floor());
+	NUM m = Q * DIV;
+	if (mul_check(Q, DIV, m)) return 1;
+	NUM s = m + REM;
+	if (add_check(m, REM, N)) return 1;
+	return !(N == s);
+}
       ///////////////////////////////////////// END FUNCTIONS /////////////////////////////////////////
 
 } // ENDING CURLY BRACKET num7 NAMESPACE END
