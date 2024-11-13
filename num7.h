@@ -3475,7 +3475,9 @@ const char* is_strfmt_exp(const char* sn) {
     */
     static char* p;
     static int NEG0, NEG1;
-    i32 DIM = (i32)(strlen(sn) + 4) * sizeof(char); //1=>NULL 2=> .0
+    i32 sn_L = (i32)strlen(sn);
+    if (sn_L < 5) return NULL; //MIN ARGUMENT LENGTH
+    i32 DIM = (i32)(sn_L + 4) * sizeof(char); //1=>NULL 2=> .0
     char* r1  = (char*)malloc(DIM); if (freemem() < RAM_SYS) reset();     //RAM DYNAMIC ALLOCATION
     char* be0 = (char*)malloc(DIM); if (freemem() < RAM_SYS) reset();    //BASE
     char* be1 = (char*)malloc(DIM); if (freemem() < RAM_SYS) reset();   //EXPONENT
