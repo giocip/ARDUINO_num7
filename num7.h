@@ -388,7 +388,7 @@ public:
     NUM(double n) {
         this-> S = 0; this-> C = NULL; this-> E = 0; this-> CE= NULL; this-> len_I = 0; this-> len_F = 0;
         char s[32];
-        sprintf(s, "%.15f", n);
+        snprintf(s, 32, "%.15f", n);
         raise("double IS NOT CONSTRUCTION VALID DATA, use NUM.from_double() instead!", s);
         *this = 0;
         return;
@@ -1239,7 +1239,7 @@ public:
     /// NUM IN-LINE /// (DEBUG) RETURN NUM STRUCTURE ATTRIBUTES STRING, CODE: NUM a("-123.0e-3"); char* s = a.sprint_fields(); print(s, "\n"); //S=1 CE=123.0e-3 C=123.0 E=-3 len_I=3 len_F=1
     char* sprint_fields() const {
         static char buffer[128]; 
-        sprintf(buffer, "S=%d CE=%s C=%s E=%d len_I=%d len_F=%d", S, CE, C, E, len_I, len_F);
+        snprintf(buffer, 128, "S=%d CE=%s C=%s E=%d len_I=%d len_F=%d", S, CE, C, E, len_I, len_F);
         buffer[127] = '\0'; //STRING TERMINATOR CONSTRAINT
         return buffer;
     }
@@ -1901,7 +1901,7 @@ public:
     /// NUM IN-LINE /// CONVERT DOUBLE TO NUM OBJECT (MAY BE PRECISION LOSS IF NOT ROUNDED), CODE: double a(-2543.9935500001); NUM A; A = A.from_double(a).round(5); print(A, "\n"); //-2543.99355
     NUM& from_double(double d) {
         static char s[64];
-        sprintf(s, "%.15f", d);
+        snprintf(s, 64, "%.15f", d);
         return *this = s;
     }
 }; ///////////////// END CLASS NUM /////////////////     ///////////////// END CLASS NUM /////////////////
@@ -5515,7 +5515,7 @@ char* FACT(int N) {
 /// NUM OUT-LINE /// (DEBUG) RETURN NUM STRUCTURE ATTRIBUTES STRING, CODE: NUM a("-123.0e-3"); char* s = sprint_fields(a); print(s, "\n"); //S=1 CE=123.0e-3 C=123.0 E=-3 len_I=3 len_F=1
 char* sprint_fields(NUM& a) {
     static char buffer[128];
-    sprintf(buffer, "S=%d CE=%s C=%s E=%d len_I=%d len_F=%d", a.S, a.CE, a.C, a.E, a.len_I, a.len_F);
+    snprintf(buffer, 128, "S=%d CE=%s C=%s E=%d len_I=%d len_F=%d", a.S, a.CE, a.C, a.E, a.len_I, a.len_F);
     buffer[127] = '\0'; //STRING TERMINATOR CONSTRAINT
     return buffer;
 }	
@@ -5735,7 +5735,7 @@ NUM* minmax(NUM* cart, I64 elements) {
 /// NUM OUT-LINE /// CONVERT double TO STRING, CODE: NUM a(from_double(3.141592654000001)); a.print("\n"); //3.141592654000001
 char *from_double(double d) {
     static char s[64];
-    sprintf(s, "%.16f", d);
+    snprintf(s, 64, "%.16f", d);
     return s;
 }
 /// NUM OUT-LINE /// GAUSS SUM, CODE: NUM a(3); sumG(a).print("\n"); //6.0 = 3 + 2 + 1 + 0
