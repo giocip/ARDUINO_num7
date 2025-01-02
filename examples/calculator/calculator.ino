@@ -35,7 +35,7 @@ void setup() {
 	/* DIVIDE FOR 10      */ _10div("5.25").print(" (DIVISION FOR TEN OF 5.25)\n");              //0.525
 	/* DIVIDE FOR 100     */ _100div("5.25").print(" (DIVISION FOR HUNDRED OF 5.25)\n");        //0.0525
 	/* DIVIDE FOR 1000    */ _1000div("5.25").print(" (DIVISION FOR THOUSAND OF 5.25)\n");     //0.00525
-	/* PERCENTAGE         */ pct("3.725", "150.00").round(2).print(" = 3.725% OF 150 (PERCENTAGE)\n");        //3.73
+	/* PERCENTAGE         */ pct("3.725", "150.00").round(2).print(" = 3.725% OF 150 (PERCENTAGE)\n");        //5.59
 	/* PERTHOUSAND        */ pth("2.00", "20_000.00").round(2).print(" = 2PTH OF 20000 (PERTHOUSAND)\n");    //40.0
 	/* SPIN-OFF           */ spinoff("22.00", "1_299.00").round(2).print(" = (-22%) 1299 (SPIN-OFF)\n"); 	//1064.75
 	/* SPIN-ON            */ spinon("22.00", "1_064.75").round(2).print(" = +22% OF 1064.75 (SPIN-ON)\n"); //1299.0
